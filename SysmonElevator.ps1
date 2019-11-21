@@ -5,7 +5,7 @@
 param([switch]$parseCommandLine = $False)
 
 #Get Events from Sysmon EVTX log
-$Events = Get-WinEvent -FilterHashtable @{logname="Microsoft-Windows-Sysmon/Operational";id=1;}
+$Events = Get-WinEvent -FilterHashtable @{logname="Microsoft-Windows-Sysmon/Operational";id=1;} -ErrorAction SilentlyContinue
 
 #Well-known SIDs https://support.microsoft.com/en-us/kb/243330
 ###LocalSIDs###
